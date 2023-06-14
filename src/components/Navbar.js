@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import { a } from "react-router-dom";
 
 export const Navbar = (props) => {
   return (
@@ -8,7 +9,7 @@ export const Navbar = (props) => {
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="#">
             {props.title}
           </a>
           <button
@@ -30,12 +31,12 @@ export const Navbar = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                {/* <a className="nav-a" href="/about">
                   {props.about}
-                </a>
+                </a> */}
               </li>
             </ul>
-            <div class="form-check form-switch">
+            <div className="form-check form-switch">
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -48,6 +49,7 @@ export const Navbar = (props) => {
                   props.mode === "light" ? "dark" : "light"
                 }`}
                 htmlFor="flexSwitchCheckDefault"
+                onClick={props.changeAlert}
               >
                 {`Enable ${props.mode === "light" ? "dark" : "light"} Mode`}
               </label>
